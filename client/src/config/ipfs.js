@@ -1,8 +1,14 @@
-import IPFS from 'ipfs-mini';
-const ipfs = new IPFS({
-  host: "ipfs.infura.io",
-  port: 5001,
-  protocol: "https",
-});
+import {create} from 'ipfs-http-client';
 
-export default ipfs;
+const ipfsClient = async () => {
+  const ipfs = await create({
+    host : "ipfs.infura.io",
+    port : 5001,
+    protocol : "https"
+  })
+  return ipfs;
+}
+
+
+
+export default ipfsClient;

@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract NFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     mapping(uint256 => string) public tokenIdToSerialNumber;
-    mapping(string => string) public serialNumberToIPFSHash;
+    mapping(string => string) public serialNumberToIPFSHash; //As the image will be uploaded before the NFT is minted so we have to store the image for the product in the mapping
     Counters.Counter private _tokenIdCounter;
 
     constructor() ERC721("NFT", "NFT") {}
@@ -52,7 +52,7 @@ contract NFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         return super.supportsInterface(interfaceId);
     }
 
-    function storeIPFS(string memory _serialNumber, string memory _IPFSHash) public {
+    function storeImageIPFS(string memory _serialNumber, string memory _IPFSHash) public {
         serialNumberToIPFSHash[_serialNumber] = _IPFSHash;
     }
 }
