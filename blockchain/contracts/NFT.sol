@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+import "../openzepplin/token/ERC721/ERC721.sol";
+import "../openzepplin/token/ERC721/extensions/ERC721Enumerable.sol";
+import "../openzepplin/token/ERC721/extensions/ERC721URIStorage.sol";
+import "../openzepplin/access/Ownable.sol";
+import "../openzepplin/utils/Counters.sol";
 
 contract NFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     mapping(string => uint256) public serialNumberToTokenId; //To store NFT associated with the serial number of the product
-    mapping(string => string) public serialNumberToIPFSHash; //As the image will be uploaded before the NFT is minted so we have to store the image for the product in the mapping
+    // mapping(string => string) public serialNumberToIPFSHash; //As the image will be uploaded before the NFT is minted so we have to store the image for the product in the mapping
     Counters.Counter private _tokenIdCounter;
 
     constructor() ERC721("NFT", "NFT") {}
@@ -52,7 +52,7 @@ contract NFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         return super.supportsInterface(interfaceId);
     }
 
-    function storeImageIPFS(string memory _serialNumber, string memory _IPFSHash) public {
-        serialNumberToIPFSHash[_serialNumber] = _IPFSHash;
-    }
+    // function storeImageIPFS(string memory _serialNumber, string memory _IPFSHash) public {
+    //     serialNumberToIPFSHash[_serialNumber] = _IPFSHash;
+    // }
 }

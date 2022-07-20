@@ -1,102 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@100;300;400;700&display=swap');
-html{
-    font-size: 65%;
-    overflow-x : hidden;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@100;300;400;700&display=swap");
+html {
+  font-size: 65%;
+  overflow-x: hidden;
 }
-.home{
-    background-color:#041C32;
-    color : white;
-    display : flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+.home {
+  background-color: #041c32;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
-h1{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
-    font-weight: bold;
-    line-height : 55px;
-    width : 140%;
+.title {
+  margin-left: 0%;
 }
-.topContainer{
-    margin-top: 10%;
-    width : 70%;
-    display : flex;
-    justify-content: space-between;
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 55px;
+  width: 140%;
 }
-.descriptionContainer{
-    width : 45%;
+.topContainer {
+  margin-top: 10%;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
 }
-p{
-    font-size: 1.4rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 100;
-    margin-top: 5%;
+.descriptionContainer {
+  width: 45%;
 }
-.buttonContainer{
-    margin-top: 5%;
-    display : flex;
-    width: 70%;
-    justify-content: space-between;
+p {
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  margin-top: 5%;
 }
-.btn{
-    color : black;
-    font-family : 'Poppins', sans-serif;
-    font-weight: 400;
-    padding : 2%;
-    width : 45%;
-    font-size: 1.4rem;
-    cursor: pointer;
-    border-radius: 14px;
-    margin-top : 15%;
+.buttonContainer {
+  margin-top: 5%;
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
 }
-.btn-shop{
-    background-color: #ECB365;
-
+.btn {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding: 2%;
+  width: 45%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 14px;
+  margin-top: 15%;
 }
-.btn-shop:hover{
-    background-color: transparent;
-    border : 1px solid #ECB365;
-    color  : #ECB365;
+.btn-shop {
+  background-color: #ecb365;
 }
-.btn-aboutUs{
-    border : 1px solid #ECB365;
-    color  : #ECB365;
+.btn-shop:hover {
+  background-color: transparent;
+  border: 1px solid #ecb365;
+  color: #ecb365;
 }
-.btn-aboutUs:hover{
-    background-color : #ECB365;
+.btn-aboutUs {
+  border: 1px solid #ecb365;
+  color: #ecb365;
 }
-.imageContainer-1{
-    width : 40%;
-    height : auto;
-    margin-top : -3%;
+.btn-aboutUs:hover {
+  background-color: #ecb365;
 }
-img{
-    height : 100%;
-    width : 100%;
+.imageContainer-1 {
+  width: 40%;
+  height: auto;
+  margin-top: -3%;
 }
-.heading{
-    font-size : 3rem;
-    margin-top : 3%;
-    margin-left : 50%;
-    transform : translateX(-150px);
+img {
+  height: 100%;
+  width: 100%;
 }
-.breaker{
-    background-color : white;
-    width : 20%;
-    height : 2px;
-    margin-left : 50%;
-    transform : translateX(-50%);
+.heading {
+  font-size: 3rem;
+  margin-top: 3%;
+  margin-left: 50%;
+  transform: translateX(-150px);
 }
-.featuredContainer{
-    display: flex;
-    flex-direction : column;
-    width: 80%;
+.breaker {
+  background-color: white;
+  width: 20%;
+  height: 2px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
-.productContainer{
-    display : flex;
-    margin-top : 5%;
-    width : 100%;
-    justify-content: space-evenly;
+.featuredContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.productContainer {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 8%;
+  justify-content: space-evenly;
 }

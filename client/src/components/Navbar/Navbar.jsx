@@ -1,16 +1,24 @@
 import "./navbar.css";
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import logoImage from "../../assets/logo.png";
 import cartIcon from "../../assets/cart.svg";
 import searchIcon from "../../assets/search.svg";
 const Navbar = () => {
+    const navigate = useNavigate();
+    const navigateHome = () => {
+        navigate('/');
+    }
+    const navigateShop = () => {
+        navigate('/shop')
+    }
     return (
         <div className="mainContainer">
             <div className="logoImageContainer">
-                <img src={logoImage} alt="logo" />
+                <img onClick={navigateHome} src={logoImage} alt="logo" />
             </div>
             <div className="navbarMenuOptions">
-                <div style={{cursor: 'pointer'}}>Home</div>
-                <div style={{cursor: 'pointer'}}>Shop</div>
+                <div onClick={navigateHome} style={{cursor: 'pointer'}}>Home</div>
+                <div onClick={navigateShop} style={{cursor: 'pointer'}}>Shop</div>
                 <div style={{cursor: 'pointer'}}>About</div>
                 <div style={{cursor: 'pointer'}}>Contact</div>
             </div>
