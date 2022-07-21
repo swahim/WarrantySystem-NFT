@@ -23,6 +23,7 @@ function App() {
           <Route exact path="/shop" element={<ShopPage />} />
         </Routes>
       </Router>
+      {/* <UploadImage /> */}
     </>
   )
 }
