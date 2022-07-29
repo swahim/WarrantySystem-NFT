@@ -7,13 +7,14 @@ const productModel = require('../models/product');
 class ProductService {
   async uploadProduct(body, user) {
     try {
-      const { productName, price, productDescription, image } = body;
+      const { productName, price, productDescription, image, imageHash } = body;
 
       productModel.create({
         productName,
         price,
         productDescription,
         image,
+        imageHash
       });
     } catch (error) {
       throw error;

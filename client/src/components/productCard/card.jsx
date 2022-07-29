@@ -7,7 +7,7 @@ const Card = (props) => {
       </div>
       <div>
         <h3>{props.productName}</h3>
-        <div className="productCost">{props.cost}</div>
+        <div className="productCost">Rs. {props.cost}</div>
       </div>
     </div>
   );

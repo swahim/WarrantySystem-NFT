@@ -1,6 +1,6 @@
 const pino = require("pino");
 module.exports = pino({
-  name: "SARVH-BACKEND",
+  name: "warrantyNFT",
   level: "debug",
   prettyPrint: {
     colorize: true, // colorizes the log

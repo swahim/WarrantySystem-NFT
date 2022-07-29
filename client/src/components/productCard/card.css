@@ -3,6 +3,8 @@
     display : flex;  
     flex-direction: column;
     justify-content: space-around;
+    width : 100%;
+    cursor: pointer;
 }
 .cardImage{
     height: 80%;
@@ -15,6 +17,7 @@ img{
 h3{
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
+    margin-top:5%;
 }
 .productCost{
     font-family: 'Poppins', sans-serif;

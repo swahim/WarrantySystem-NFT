@@ -15,10 +15,10 @@ contract NFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
     constructor() ERC721("NFT", "NFT") {}
 
-    function safeMint(address to, string memory uri, string memory _serialNumber) public onlyOwner {
+    function safeMint(string memory uri, string memory _serialNumber) public {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
-        _safeMint(to, tokenId);
+        _safeMint(msg.sender, tokenId);
         _setTokenURI(tokenId, uri);
         serialNumberToTokenId[_serialNumber] = tokenId;
     }

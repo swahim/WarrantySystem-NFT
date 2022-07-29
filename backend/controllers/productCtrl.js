@@ -55,46 +55,33 @@ class Controller {
       res.status(500).json({ error: error });
     }
   }
-  // async getProductById(req, res, next) {
-  //   try {
-  //     if (!req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
-  //       throw { status: 400, message: 'Invalid product id' };
-  //     }
-  //     const product = await productModel.findOne({ _id: req.params.id }).populate('user likes');
-  //     if (!product) {
-  //       throw { status: 400, message: 'Product not found' };
-  //     }
-  //     if (!product.user) {
-  //       await productModel.findOneAndDelete({ _id: req.params.id });
-  //       throw { status: 400, message: 'Product not found' };
-  //     }
-
-  //     res.status(200).json({ message: 'Product fetched', product });
-  //   } catch (error) {
-  //     l.error(`[GET PRODUCT BY ID CONTROLLER] ${error}`, req);
-  //     next(error);
-  //   }
-  // }
-  // async topProducts(req, res, next) {
-  //   try {
-  //     const product = await productModel
-  //       .find()
-  //       .sort('-createdAt')
-  //       .populate('user likes', 'avatar username fullname followers')
-  //       .populate({
-  //         path: 'comments',
-  //         populate: {
-  //           path: 'user likes',
-  //           select: '-password',
-  //         },
-  //       })
-  //       .limit(5);
-  //     res.status(200).json({ message: 'Product fetched', product: product });
-  //   } catch (err) {
-  //     l.error('[TOP PRODUCTS]', req);
-  //     next(err);
-  //   }
-  // }
+  async getProductById(req, res, next) {
+    try {
+      if (!req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+        throw { status: 400, message: 'Invalid product id' };
+      }
+      const product = await Product.findOne({ _id: req.params.id });
+      if (!product) { 
+        throw { status: 400, message: 'Product not found' };
+      }
+      res.status(200).json({ message: 'Product fetched', product });
+    } catch (error) {
+      l.error(`[GET PRODUCT BY ID CONTROLLER] ${error}`, req);
+      next(error);
+    }
+  }
+  async topProducts(req, res, next) {
+    try {
+      const product = await productModel
+        .find()
+        .sort('-createdAt')
+        .limit(3);
+      res.status(200).json({ message: 'Product fetched', product: product });
+    } catch (err) {
+      l.error('[TOP PRODUCTS]', req);
+      next(err);
+    }
+  }
   // async likeProduct(req, res) {
   //   try {
   //     let product = await productModel.find({

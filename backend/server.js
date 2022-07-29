@@ -9,8 +9,9 @@ const PORT = process.env.PORT || 8000;
 
 require('./models/product');
 
-const origin =
-  process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.FRONTEND;
+const origin = "http://localhost:5173";
+console.log(origin)
+
 
 async function startServer() {
   app.use(

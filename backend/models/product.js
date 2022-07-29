@@ -39,3 +39,5 @@ const productSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model('product', productSchema);
+
+//https://ipfs.infura.io/ipfs/QmTVzPdqGtWdX8D3HRTDfHPUfSTL5bXEuJAw9bETki5Ru8

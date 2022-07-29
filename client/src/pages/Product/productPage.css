@@ -35,7 +35,7 @@ h3{
     width : 20%;
     border-radius : 14px;
     background-color : #ECB365;
-    border : none;
+    border : 1px solid #ecb365;
     font-size: 1.3rem;
 }
 .btn-shopnow:hover{
