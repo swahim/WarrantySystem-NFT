@@ -55,3 +55,12 @@ h3{
     font-family: "Poppins", sans-serif;
     font-weight: bold;
 }
+.coupon-field{
+    padding : 1%;
+    border-radius: 14px;
+    width : 50%;
+}
+.form-buy{
+    display: flex;
+    flex-direction: column;
+}

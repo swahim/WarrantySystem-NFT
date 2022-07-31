@@ -19,7 +19,7 @@ const ShopPage = () => {
         {products && products.length > 0 ? (
           <>
             {products.map((product, key) => (
-              <Link to={`/shop/product/${product._id}`}>
+              <Link className="link" to={`/shop/product/${product._id}`}>
                 <Card
                   key={product._id}
                   cost={product.price}

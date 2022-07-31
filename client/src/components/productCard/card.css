@@ -7,8 +7,8 @@
     cursor: pointer;
 }
 .cardImage{
-    height: 80%;
-    width : auto;
+    height: 260px;
+    width : 240px;
 }
 img{
     width: 100%;

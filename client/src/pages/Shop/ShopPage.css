@@ -19,9 +19,13 @@ h1 {
   width: 5%;
 }
 .productContainer{
-    display: grid;
+    display: flex;
     width : 80%;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 20px;
     row-gap: 20px;
+}
+.link{
+  text-decoration: none;
+  color : white;
 }

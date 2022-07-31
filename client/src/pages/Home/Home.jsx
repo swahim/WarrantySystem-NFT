@@ -1,5 +1,7 @@
 import "./Home.css";
-import React, { useContext } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import img1 from "../../assets/rocket.png";
 import Card from "../../components/productCard/card";
@@ -10,6 +12,16 @@ const Home = () => {
   const navigateShop = () => {
     navigate('/shop')
   }
+  const [products, setProducts] = useState();
+  useEffect(() => {
+    axios.get("http://localhost:8000/api/topProducts").then((res) => {
+      setProducts(res.data.product);
+      console.log(res.data.product);
+    });
+  }, []);
+  useEffect(() => {
+    console.log(products)
+  }, [products])
   return (
     <div className="home">
       <div className="topContainer">
@@ -37,9 +49,21 @@ const Home = () => {
         <h1 className="heading">Featured Products</h1>
         <div className="breaker" />
         <div className="productContainer">
-          <Card cost="500" productName="Product Name" />
-          <Card cost="500" productName="Product Name" />
-          <Card cost="500" productName="Product Name" />
+        {products && products.length > 0 ? (
+          <>
+            {products.map((product, key) => (
+              <Link className="link" to={`/shop/product/${product._id}`}>
+                <Card
+                  key={product._id}
+                  cost={product.price}
+                  productName={product.productName}
+                  image={product.image}
+                />
+              </Link>
+            ))}
+          </>
+        ) : null}
+        ;
         </div>
       </div>
     </div>

@@ -43,10 +43,10 @@ img {
   cursor: pointer;
 }
 .getInfo-btn{
-  width : 120%;
+  width : 100%;
   padding : 4%;
   font-family: "Poppins", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
   background-color : #ecb365;
   border : 1px solid #ecb365;
   border-radius: 14px;

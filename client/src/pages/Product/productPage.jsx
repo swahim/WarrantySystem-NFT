@@ -135,7 +135,8 @@ const ProductPage = () => {
           <h2>{product?.productName}</h2>
           <h3>Rs.{product?.price}</h3>
           <p className="description-product">{product?.productDescription}</p>
-          <form onSubmit={onSubmit}>
+          <form className="form-buy" onSubmit={onSubmit}>
+            <input className="coupon-field" placeholder="Enter coupon code" type="text"/>
             <button className="btn-shopnow">Buy with NFT</button>
           </form>
           <div className="line"></div>

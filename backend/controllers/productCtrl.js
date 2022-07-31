@@ -75,7 +75,7 @@ class Controller {
       const product = await productModel
         .find()
         .sort('-createdAt')
-        .limit(3);
+        .limit(4);
       res.status(200).json({ message: 'Product fetched', product: product });
     } catch (err) {
       l.error('[TOP PRODUCTS]', req);
